@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For You 💖</title>
+
+
+<style>
+body {
+    margin: 0;
+    background: #ffe4ec;
+    font-family: 'dancing script', sans-serif;
+    overflow: hidden;
+}
+
+/* PAGES */
+input { display: none; }
+
+.section {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#s1:checked ~ .content #page1,
+#sno:checked ~ .content #noPage,
+#syes:checked ~ .content #cakePage,
+#sletter:checked ~ .content #letterPage {
+    display: flex;
+}
+
+/* TEXT */
+h1, h2, h3 {
+    font-family: 'DANCING SCRIPT', cursive;
+    color: #ff6f91;
+}
+
+/* BUTTONS */
+label {
+    padding: 12px 25px;
+    border-radius: 25px;
+    margin: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    background: #ff9bb3;
+    color: white;
+    transition: 0.3s;
+}
+
+label:hover {
+    transform: scale(1.1);
+}
+
+.btn-white {
+    background: white;
+    color: #ff6f91;
+}
+
+/* IMAGES CLEAN */
+img {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+/* BEARS */
+.bears-img {
+    width: 220px;
+    animation: float 3s ease-in-out infinite;
+}
+
+/* CAT */
+.cat {
+    width: 150px;
+    animation: float 3s ease-in-out infinite;
+}
+
+/* FLOAT */
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+/* HEARTS */
+.heart {
+    position: absolute;
+    font-size: 20px;
+    animation: floatHearts 6s linear infinite;
+}
+
+@keyframes floatHearts {
+    0% { top: 100%; opacity: 0; }
+    50% { opacity: 1; }
+    100% { top: -10%; opacity: 0; }
+}
+
+/* CAKE */
+.cake {
+    font-size: 60px;
+}
+
+/* CANDLES */
+.candles {
+    display: flex;
+    gap: 10px;
+    margin-bottom: -10px;
+}
+
+.candle {
+    width: 8px;
+    height: 25px;
+    background: white;
+    border-radius: 4px;
+    position: relative;
+}
+
+.flame {
+    width: 10px;
+    height: 10px;
+    background: orange;
+    border-radius: 50%;
+    position: absolute;
+    top: -10px;
+    left: -1px;
+    animation: flicker 0.2s infinite alternate;
+    box-shadow: 0 0 10px rgb(226, 126, 208);
+}
+
+@keyframes flicker {
+    0% { transform: scale(1); opacity: 0.7; }
+    100% { transform: scale(1.3); opacity: 1; }
+}
+
+/* LETTER */
+.letter {
+    background: white;
+    padding: 20px;
+    border-radius: 20px;
+    max-width: 300px;
+    color: #ff6f91;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* SPARKLES */
+.sparkle {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: white;
+    border-radius: 50%;
+    animation: sparkleMove 4s linear infinite;
+}
+
+@keyframes sparkleMove {
+    0% { transform: translateY(100vh); opacity: 0; }
+    50% { opacity: 1; }
+    100% { transform: translateY(-10vh); opacity: 0; }
+}
+
+/* CONFETTI */
+.confetti {
+    position: fixed;
+    width: 8px;
+    height: 8px;
+    top: -10px;
+    animation: fall 3s linear forwards;
+}
+
+@keyframes fall {
+    to { transform: translateY(110vh) rotate(360deg); }
+}
+</style>
+</head>
+
+<body>
+
+<div class="content">
+
+<!-- PAGE 1 -->
+<input type="radio" name="page" id="s1" checked>
+<input type="radio" name="page" id="sno">
+<input type="radio" name="page" id="syes">
+<input type="radio" name="page" id="sletter">
+
+<div class="content">
+
+<div id="page1" class="section">
+
+    <img src="bears.jpeg" class="bears-img">
+
+    <h2>Hey cutie 💕</h2>
+    <h3 class="name">DOHAA😩</h3>
+    <p>Do you want to see something?</p>
+
+    <label for="syes">Yes 💖</label>
+    <label for="sno" class="btn-white">No 😢</label>
+
+</div>
+
+<!-- NO PAGE -->
+<div id="noPage" class="section">
+    <h2>Oh nooo 😭</h2>
+    <label for="s1">Come back 💕</label>
+</div>
+
+<!-- CAKE PAGE -->
+<div id="cakePage" class="section">
+
+    <div class="candles">
+        <div class="candle"><div class="flame"></div></div>
+        <div class="candle"><div class="flame"></div></div>
+        <div class="candle"><div class="flame"></div></div>
+    </div>
+
+    <div class="cake">🎂</div>
+
+    <h1 onclick="explode()">Happy Birthday Sweetie 💕</h1>
+
+    <label for="sletter">Open 💌</label>
+</div>
+
+<!-- LETTER PAGE -->
+<div id="letterPage" class="section">
+
+    <div style="display:flex; align-items:center; gap:20px; flex-wrap:wrap; justify-content:center;">
+
+        <div class="letter">
+            <h3>For You 💖</h3>
+            <p>
+            Happy birthday to the one I never thought would become a part of me. I love you.
+            <br>
+I wish you a life filled with happiness and joy, far away from anything that disturbs your peace.
+I know we are far apart, but the distance between our hearts is closer than the distance between us on this earth.
+If joy and happiness were human, they would be you.
+<br>
+From your name, light like sunshine rises and brightens our lives, and your name alone has illuminated my darkness.
+<br>
+I love you 💗
+            </p>
+        </div>
+
+        <img src="cat.jpeg" class="cat">
+
+    </div>
+
+    <label for="s1">Play again 🔁</label>
+</div>
+
+</div>
+
+<!-- HEARTS -->
+<div class="heart" style="left:10%">💗</div>
+<div class="heart" style="left:30%; animation-delay:2s">💕</div>
+<div class="heart" style="left:50%; animation-delay:1s">💖</div>
+
+<script>
+
+/* SPARKLES */
+for (let i = 0; i < 25; i++) {
+    let s = document.createElement("div");
+    s.className = "sparkle";
+    s.style.left = Math.random() * 100 + "vw";
+    s.style.animationDuration = (2 + Math.random() * 3) + "s";
+    document.body.appendChild(s);
+}
+
+/* CONFETTI */
+function explode() {
+    for (let i = 0; i < 80; i++) {
+        let c = document.createElement("div");
+        c.className = "confetti";
+        c.style.left = Math.random() * 100 + "vw";
+        c.style.background = ["#ff6f91","#fff","#ffd1dc","#ff9bb3"][Math.floor(Math.random()*4)];
+        c.style.animationDuration = (2 + Math.random()*2) + "s";
+        document.body.appendChild(c);
+
+        setTimeout(() => c.remove(), 4000);
+    }
+}
+
+</script>
+
+</body>
+</html>
